@@ -13,7 +13,7 @@ concurrency:
 jobs:
   test:
     name: Swift Package Tests
-    runs-on: macos-27
+    runs-on: xcode-27
     steps:
       - uses: actions/checkout@v4
 
