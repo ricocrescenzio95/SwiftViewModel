@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./Sources/SwiftViewModel/SwiftViewModel.docc/Resources/app-icon@3x.png" width="200">
+<img src="./Sources/SwiftViewModel/SwiftViewModel.docc/Resources/app-icon.png" width="200">
 </p>
 
 # SwiftViewModel
