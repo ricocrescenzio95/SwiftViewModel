@@ -41,6 +41,13 @@ final class ViewModelStorage {
     storage[viewModelID]?.throwingTasks.removeValue(forKey: taskID)
     return true
   }
+  
+  @MainActor
+  func cancelAllTasks(for viewModelID: ObjectIdentifier) {
+    guard let storage = storage[viewModelID] else { return }
+    storage.tasks.filter { !$0.value.keepAlive }.forEach { $0.value.task?.cancel() }
+    storage.throwingTasks.filter { !$0.value.keepAlive }.forEach { $0.value.task?.cancel() }
+  }
 }
 
 @MainActor

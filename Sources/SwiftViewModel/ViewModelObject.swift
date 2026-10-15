@@ -61,6 +61,7 @@ public struct ViewModelObject<VM: ViewModel>: @MainActor DynamicProperty {
       let id = viewModel.id
       if !isEnvironmentLoaded {
         onDeinit = {
+          viewModelStorage.cancelAllTasks(for: id)
           viewModelStorage.storage.removeValue(forKey: id)
         }
         isEnvironmentLoaded = true
